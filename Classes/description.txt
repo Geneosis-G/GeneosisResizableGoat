@@ -1,0 +1,46 @@
+Hi there !
+
+Here is my first mod for Goat Simulator (and also my first time with Unreal Script ^^)
+
+[b]FERATURES[/b]
+- MINI GOAT: A really small goat you can use to explore places you have never been before!
+- MAXI GOAT:The most scary giant goat you have ever seen.
+- GROWING GOAT: You can change the size of your goat in real time!
+
+[b]CHARACTERISTICS[/b]
+- Using Growing Goat, press [G] to divide your size by 2 and [H] to multiply it by 2.
+- The maximum scale is x8 and the minimum is x1/8.
+- Only the shape and collisions change. Which means your speed, jump height, damages and other physics properties remains the same.
+- This should be compatible with any other Mutator.
+
+[b]KNOWN BUGS[/b]
+- The ragdoll mode don't scale correctly (see dev notes for more info).
+- [Fixed] [strike]If you respawn using Growing goat, you can't change your size in real time any more.[/strike]
+- [b]Crashes the 32-bit version of the game[/b].
+- [Fixed] [strike]Your mod was working fine then after the last update of the game it started crashing.[/strike]
+
+[b]FAQ[/b]
+- My game wont start after I installed your mod, what do I do?
+[i]If you are running the 32-bit version of the game, that's normal and I can't do anything about that, try starting the 64-bit version located in "C:\Program Files (x86) \Steam \SteamApps \common \GoatSimulator \Binaries \Win64 \GoatGame.exe" [/i]
+
+- I can't find this folder on my computer, why?
+[i]If "Program Files (x86)" don't exist on your system, that means you are on a 32-bit OS so you just can't run 64-bit game sorry.
+If only "Win64" don't exist on your system, you need to install the development tools as explained in [url=http://steamcommunity.com/sharedfiles/filedetails/?id=232365177&searchtext=tools]this guide.[/url][/i]
+
+- I am running the 64-bit version of the game and this is still crashing, can you help?
+[i]First try to unsubscribe and resubscribe to the mod and see if that fixed the problem. If not, I can't do anything more for you sorry.[/i]
+
+[b]DEV NOTES[/b]
+[quote=Update 1 (08/04/2014)]- Changed Growing goat controls from [X]/[C] to [G]/[H]
+- Added title on the preview image
+- Fixed a bug in Growing goat where you couldn't change your size in real time after respawn
+- Made compatibility with other mods a bit better[/quote]
+[quote=Update 2 (11/04/2014)]- Fixed a bug due to an update of the game : the devs removed a function I was using in my mod. That may be the cause of some recent crashes.
+- Improved code structure and reusability.[/quote]
+[quote=About the ragdoll bug]Even if this is the first time I coded with UDK, this mod was not that hard to implement. Anyway I found myself stuck in a black hole problem when it came to scale a ragdoll body correctly -_- To be precise, many people tried, all of them failed and no one found a solution yet.
+So if anyone see this page with a possible solution on how to apply a scale to a PhysicsAsset object, you are welcome ^^ Here are two threads I found talking about this exact problem, but still without any issue:
+[url=http://forums.epicgames.com/archive/index.php/t-710991.html]Thread 1[/url] [url=http://forums.epicgames.com/threads/978266-Scaling-Actor-with-SkeletalMeshComponent-and-PhysicsAsset]Thread 2[/url]
+For those asking why I thing the problem come from the PhysicsAsset, first this is the explanation provided by the forums I read, then I already resized the mesh object and the collision cylinder object, so the only remaining thing in the Goat that could mess up the ragdoll is the physics... That's why I suppose there is some structure storing a value like "distance between two bones in ragdoll mode" and I need to scale it too, but I have no idea where to find it if it exists ^^"
+An interesting point to notice is that even the Coffee Stain developers didn't manage to fix this bug X) If you ever tried to jump in the huge pit that unlock the "Wonders of science" bonus you should have seen that it give your goat a random scale ^^ But once again only the mesh is sclaed, the ragdoll still have the original size...[/quote]
+
+Video featuring this mod by CinnamonToastKen.
